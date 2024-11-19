@@ -21,10 +21,12 @@ CHIP RoundToPow {
     Mux16(a=stage13, b[14]=true, sel=in[14], out=stage14);
     Mux16(a=stage14, b[15]=true, sel=in[15], out=potentialPowPos);
 
-    And16(a=potentialPowPos, b=in, out=exactMatch);
-    Or16Way(in=exactMatch, out=isExactPow2);
-
-    Mux16(a=stage14, b=potentialPowPos, sel=isExactPow2, out=adjustedPosPow);
+    Not16(in=potentialPowPos, out=notIn);
+    And16(a=in, b=notIn, out=onlyOneBit);
+    Or16Way(in=onlyOneBit, out=isExactPow22);
+    Not(in = isExactPow22, out = isExactPow2);
+    div2(in = potentialPowPos, out = outp);
+    Mux16(a=potentialPowPos, b=outp, sel=isExactPow2, out=adjustedPosPow);
 
     Not(in=in[15], out=isPositive);
     Mux16(a=false, b=adjustedPosPow, sel=isPositive, out=out); 
@@ -73,3 +75,4 @@ CHIP RoundToPow {
     Not(in=in[15], out=isPositive);
     Mux16(a=false, b=adjustedPosPow, sel=isPositive, out=out); */
 }
+
