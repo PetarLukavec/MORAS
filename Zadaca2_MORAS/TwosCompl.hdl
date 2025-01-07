@@ -1,0 +1,12 @@
+CHIP TwosCompl {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    Not16(in=in, out=inverted);
+    
+
+    //Or16(a=false, b[0]=true, out=one);
+
+    Add16(a=inverted, b[0]=true, out=out);
+}
