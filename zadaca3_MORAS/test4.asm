@@ -1,0 +1,10 @@
+(LOOP1)
+@5
+D=M
+@END1
+D;JEQ
+@5
+M=M-1
+@LOOP1
+0;JMP
+(END1)

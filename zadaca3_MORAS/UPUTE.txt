@@ -1,0 +1,14 @@
+Više manje svi programi za 1. i 2. zadatak su napisani u parser.py.
+
+Napravio sam grešku prilikom pisanja zadaće i više manje sam počeo raditi parser "from scratch"
+tek sam poslije shvatio da sam prvo input iz datoteke trebao parsirati uz pomoć već postojećeg parsera
+da se riješim "suvišnih" uvlaka i komentara.
+
+Tako da nažalost ovaj program nije otporan na komentare i neke uvlaka što smo radili na satu.
+Jednostavno sam se bacio na zadatak i sada da to popravim trebam mjenjati cijeli program što na žalost ne stignem ):
+
+Ali ono što se tražilo bih trebalo sve raditi (:
+
+Program osim što pravi .hack datoteku ispisuje i .asm code u terminalu.
+Rješenja 3.a) i 3.b) se nalaze u zad3_b.asm i zad3_a.asm
+
